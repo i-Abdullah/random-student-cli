@@ -1,0 +1,5 @@
+# Since all of my classess will start with mech, ignore those
+mech*
+
+# Ignore all csv files
+*.csv

@@ -9,6 +9,22 @@ While the .m files *should* be compatible with MATLAB, I have only tested the fu
 ## Intended use
 As the repository name implies, I intended to call these functions from a terminal running ```octave-cli```. This way I can have Octave and/or MATLAB open and call on a student at the same time while preserving my workspace variables for whatever I am currently working on in class.
 
+### Example Usage
+1. Open Terminal
+2. run ```octave-cli```
+3. run ```callStudent("mech105")``` to call on student
+4. depending on answer, type 0 or 1 to grade
+5. thats it! To check a students progress you need to figure out thier "number"
+
+## How the set of functions work
+The randomStudent collection of functions operates in a very simple manner. The user selects a ```courseIdent``` when running the  ```initializeRandomStudent()```. That function creates a .mat file containing 4 vectors. Each student's performance cooresponds to a row in that vector.
+
+The vectors are:
+* ```blacklist``` - initially empty, stores dropped student numbers
+* ```calls``` - a vector that stores how many time a student has been called on
+* ```names``` - a vector that contains the names of all the students in the class
+* ```numCorrect``` - a vector that stores how many times a student that was called on answered "correctly". In my class, any answer is ok as long as it is clear that the student was paying attention and is engaged in learning.
+
 ## Initial Setup
 If you clone / download the repository, it is reccomended to add the directory you store the functions in to your Octave path. You can do this in linux by adding the line ```addpath("~/place/to/your/clone/")``` to your ```~/.octaverc``` file.
 
@@ -44,13 +60,43 @@ There are no Outputs available for this function.
 ### ```callStudent(courseIdent)```
 This function allows the instructor to call on a random student. Currently the function will not call on a student again until all students have been called on. Future implementations will change this (don't want students thinking they can check out in big classess).
 
+The function also checks the student number against the blacklist (the list of students that have dropped)
+
 Inputs:
 * ```courseIdent``` - this is the name of the .mat file that the user specified when running ```initializeRandomStudent()``` for the first time.
 
 There are no Outputs available for this function.
 
+**NOTE: The user can type any number other than 0 or 1 after calling on a student to "skip" them**
+
 ### ```checkStudent.m```
+This function allows the instrcutor to check a students progress, how many times they have been called, and how many of thier answers are correct.
+
+Inputs:
+* ```courseIdent``` - same as before
+* ```studentNum``` - the unique identifier for each student
+
+Outputs (optional):
+* ```numCalls``` - output how many times the student has been called on
+* ```numCorrect``` - output how many times the student has been correct
+* ```percentage``` - ```numCorrect / numCalls * 100```
 
 ### ```dropStudent.m```
+This function allows the instructor to add a student number to the blacklist, so they won't be called on again. Intended to be used for students that drop the course. Removing them from the array would shift everyone's numbers around. Furthermore, it might be useful to "save" the dropped students performance. 
+
+Inputs:
+* ```courseIdent```- a string that cooresponds to the .mat file with data
+* ```studentNum``` - the number that I assign to the student
+
+Outputs (optional):
+* ```confirmation``` - logical 0 or 1 if student was dropped
 
 ### ```addStudent.m```
+This function allows the instructor to add a new student to the course if necessary. They will always be put at the end of the list of names (will mess up alphabetical order).
+
+Inputs:
+* ```courseIdent``` - same old
+* ```studentName``` - the name of the student being added. Reccomended format *Last Name, First Name*.
+
+Outputs (optional):
+* ```studentNumber``` - the unique identifier for the student in that course.

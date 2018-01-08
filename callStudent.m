@@ -60,6 +60,7 @@ function callStudent (courseIdent)
   if present ~= 0 && present ~= 1
       fprintf('\n');
       disp('Skipping...');
+      fprintf('\n');
   else
       calls(rStudent) = calls(rStudent) + 1;
   end

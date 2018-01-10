@@ -38,7 +38,7 @@ function [numCalls,numCorrect,percentage] = checkStudent (courseIdent, studentNu
   fprintf('\nStudent number %i is: %s\n\n',studentNum,names{studentNum});
   fprintf('----------------- STATS -----------------\n');
   fprintf('%s has been called %i times\n',names{studentNum},calls(studentNum));
-  fprintf('%s has been "here" %i%% of the time\n\n',names{studentNum},numCorrect(studentNum)/calls(rStudent)*100);
+  fprintf('%s has been "here" %i%% of the time\n\n',names{studentNum},numCorrect(studentNum)/calls(studentNum)*100);
   
   numCalls = calls(studentNum);
   numCorrect = numCorrect(studentNum);

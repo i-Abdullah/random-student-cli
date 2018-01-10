@@ -30,7 +30,7 @@ function [studentNumber] = addStudent (courseIdent, studentName)
     names = [names; studentName];
     calls(length(calls) + 1) = 0;
     numCorrect(length(numCorrect) + 1) = 0;
-    save("-mat",courseIdent,"blacklist","calls","names","numCorrect");
+    save("-mat",saveFilePath,"blacklist","calls","names","numCorrect","saveFilePath")
   end
   
 endfunction

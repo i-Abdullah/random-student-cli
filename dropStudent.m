@@ -31,7 +31,7 @@ function [confirmation] = dropStudent (courseIdent, studentNum)
     error('This function requires exactly two inputs. See docs');
   end
   
-  load(courseIdent)
+  load(courseIdent);
   
   fprintf('\nAre you sure you want to remove Student number %i: %s\n\n',studentNum,names{studentNum});
   confirmation = yes_or_no('Type yes to confirm: ');
@@ -39,8 +39,8 @@ function [confirmation] = dropStudent (courseIdent, studentNum)
   if confirmation ~= 1
     error('Aborting dropping student');
   else
-    blacklist = [blacklist studentNum]
-    save("-mat",courseIdent,"blacklist","calls","names","numCorrect")
+    blacklist = [blacklist studentNum];
+    save("-mat",saveFilePath,"blacklist","calls","names","numCorrect","saveFilePath");
   end
 
 endfunction

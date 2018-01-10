@@ -69,8 +69,6 @@ function callStudent (courseIdent)
       numCorrect(rStudent) = numCorrect(rStudent) + 1;
   end
 
-  save("-mat",courseIdent)
-  
-  clear all
+  save("-mat",saveFilePath,"blacklist","calls","names","numCorrect","saveFilePath")
 
 endfunction

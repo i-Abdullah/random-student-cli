@@ -3,3 +3,6 @@ mech*
 
 # Ignore all csv files
 *.csv
+
+# Ignore all test files
+test*

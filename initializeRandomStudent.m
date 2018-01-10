@@ -32,7 +32,10 @@ function initializeRandomStudent (csvFileName, courseIdent)
   calls = zeros(length(names),1);
   numCorrect = calls;
   
+  currentDirectory = pwd;
+  saveFilePath = [currentDirectory "/" courseIdent];
+  
   % only save the necessary workspace variables
-  save('-mat',courseIdent,'blacklist','names','calls','numCorrect');
+  save('-mat',saveFilePath,'blacklist','names','calls','numCorrect','saveFilePath');
 
 endfunction

@@ -37,5 +37,7 @@ function initializeRandomStudent (csvFileName, courseIdent)
   
   % only save the necessary workspace variables
   save('-mat',saveFilePath,'blacklist','names','calls','numCorrect','saveFilePath');
+  
+  fprintf("\nNote the save path is %s\n",saveFilePath);
 
 endfunction

@@ -1,6 +1,9 @@
 # Since all of my classess will start with mech, ignore those
 mech*
 
+# Ignore all xls files
+*.xls
+
 # Ignore all csv files
 *.csv
 

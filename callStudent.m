@@ -1,29 +1,28 @@
-## Copyright (C) 2018 Samuel Bechara
-## 
-## This program is free software; you can redistribute it and/or modify it
-## under the terms of the GNU General Public License as published by
-## the Free Software Foundation; either version 3 of the License, or
-## (at your option) any later version.
-## 
-## This program is distributed in the hope that it will be useful,
-## but WITHOUT ANY WARRANTY; without even the implied warranty of
-## MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-## GNU General Public License for more details.
+% Copyright (C) 2018 Samuel Bechara
+% 
+% This program is free software; you can redistribute it and/or modify it
+% under the terms of the GNU General Public License as published by
+% the Free Software Foundation; either version 3 of the License, or
+% (at your option) any later version.
+% 
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
 
-## Author: Samuel Bechara <sbechara@sbechara-ThinkPad-T440s>
-## Created: 2018-01-04
-## Last Edit: 2018-01-04
+% Author: Samuel Bechara <sbechara@sbechara-ThinkPad-T440s>
+% Created: 2018-01-04
 
 function callStudent (courseIdent)
-  # callStudent() is a function that allows instructors to track participation
-  #
-  # It is reccomended to call this function from a terminal running octave-cli
-  # For more detailed documentation, please see README.md in root folder
-  #
-  # Inputs:
-  #   courseIdent - a string that cooresponds to the .mat file with data
-  #
-  # Copyright (C) 2018 Samuel Bechara
+  % callStudent() is a function that allows instructors to track participation
+  %
+  % It is reccomended to call this function from a terminal running octave-cli
+  % For more detailed documentation, please see README.md in root folder
+  %
+  % Inputs:
+  %   courseIdent - a string that cooresponds to the .mat file with data
+  %
+  % Copyright (C) 2018 Samuel Bechara
   
   if nargin ~= 1
     error('This function requires exactly 1 input. See Docs');
@@ -52,7 +51,7 @@ function callStudent (courseIdent)
       end
   end
 
-  # "Call" on student
+  % "Call" on student
   fprintf('\nStudent number %i is: %s\n\n',rStudent,names{rStudent});
 
   present = input('Is student "here"? 0-No 1-Yes ---->  ');
@@ -71,4 +70,4 @@ function callStudent (courseIdent)
 
   save("-mat",saveFilePath,"blacklist","calls","names","numCorrect","saveFilePath")
 
-endfunction
+end

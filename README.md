@@ -3,7 +3,7 @@ The random-student-cli repository contains Octave functions that allow me to cal
 
 Furthermore, it is open source so the students can look at the source code and can not accuse me of bias! My intention is for my students to peruse this code. Although there are more powerful and arguably more useful ways to implement these same features, I am teaching courses that emphasize MATLAB and I want to show students that Octave (MATLAB really but same syntax) can be used for a host of different things. Hopefully this will motivate some of them to use Octave, git, and other open source tools in the future.
 
-## GNU Octave Tested and Working! *Maybe MATLAB Compatible?*
+## GNU Octave Tested and Working! Tested and working in MATLAB
 While the .m files *should* be compatible with MATLAB, I have only tested the functions with GNU Octave, a free, open-source, alternative to MATLAB.
 
 ## Intended use

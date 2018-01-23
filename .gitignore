@@ -9,3 +9,7 @@ mech*
 
 # Ignore all test files
 test*
+
+# Ignore grader assignment files
+assignGraders.m
+graderAssign.txt

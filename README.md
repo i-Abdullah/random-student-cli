@@ -1,17 +1,14 @@
-# random-student-cli README show Abdulla
-The random-student-cli repository contains Octave functions that allow me to call on, and keep track of, random students in my class. It allows me to track participation and encourages student engagement. It also removes instructor bias and forces me to call on shy, quiet, or unengaged students.
+# random-student-cli README
+The random-student-cli repository contains MATLAB functions that allow me to call on, and keep track of, random students in my class. It allows me to track participation and encourages student engagement. It also removes instructor bias and forces me to call on shy, quiet, or unengaged students.
 
-Furthermore, it is open source so the students can look at the source code and can not accuse me of bias! My intention is for my students to peruse this code. Although there are more powerful and arguably more useful ways to implement these same features, I am teaching courses that emphasize MATLAB and I want to show students that Octave (MATLAB really but same syntax) can be used for a host of different things. Hopefully this will motivate some of them to use Octave, git, and other open source tools in the future.
-
-## GNU Octave Tested and Working! Tested and working in MATLAB
-While the .m files *should* be compatible with MATLAB, I have only tested the functions with GNU Octave, a free, open-source, alternative to MATLAB.
+Furthermore, it is open source so the students can look at the source code and can not accuse me of bias! My intention is for my students to peruse this code. Although there are more powerful and arguably more useful ways to implement these same features, I am teaching courses that emphasize MATLAB and I want to show students that MATLAB can be used for a host of different things. Hopefully this will motivate some of them to use MATLAB, git, and other open source tools in the future.
 
 ## Intended use
-As the repository name implies, I intended to call these functions from a terminal running ```octave-cli```. This way I can have Octave and/or MATLAB open and call on a student at the same time while preserving my workspace variables for whatever I am currently working on in class.
+As the repository name implies, I intended to call these functions from a terminal running ```matlab -nodesktop```. This way I can have MATLAB open and call on a student at the same time while preserving my workspace variables for whatever I am currently working on in class.
 
 ### Example Usage
 1. Open Terminal
-2. run ```octave-cli```
+2. run ```matlab -nodesktop```
 3. run ```callStudent("mech105")``` to call on student
 4. depending on answer, type 0 or 1 to grade
 5. thats it! To check a students progress you need to figure out thier "number"
@@ -26,9 +23,9 @@ The vectors are:
 * ```numCorrect``` - a vector that stores how many times a student that was called on answered "correctly". In my class, any answer is ok as long as it is clear that the student was paying attention and is engaged in learning.
 
 ## Initial Setup
-If you clone / download the repository, it is reccomended to add the directory you store the functions in to your Octave path. You can do this in linux by adding the line ```addpath("~/place/to/your/clone/")``` to your ```~/.octaverc``` file.
+If you clone / download the repository, it is reccomended to add the directory you store the functions in to your MATLAB path.
 
-That way it is super easy to call the functions from an ```octave-cli``` terminal.
+That way it is super easy to call the functions from a ```matlab -nodesktop``` terminal.
 
 ## Semester Setup (Run at beginning of every semester)
 These functions will work with any school system but since I am at Colorado State University, it is designed to work fairly easily with AiresWeb.
@@ -42,8 +39,8 @@ To setup the program for the semester perform the following steps:
 * Under "Instructor Tools" click the "Class Lists" link.
 * In the window that opens, click the "Class List" next to the class you want to setup.
 * You should now see a list of all the students in your class, scroll to the bottom and click the "Save Test (Comma Delimited)" button and save the file somewhere on your computer
-* Open the file you just downloaded with your favorite spreadsheet app (for a free open-source alternative to Excel, try LibreOffice!). Copy the student names column (remove the header) and paste them in a new spreadsheet. Save this spreadsheet as a semi-colon delimited CSV file.
-* Finally, you can open Octave. If you added the repository to your path, you should be able to type run the ```initializeRandomStudent()``` function to get started.
+* Open the file you just downloaded with your favorite spreadsheet app (for a free open-source alternative to Excel, try LibreOffice!). Copy the student names column (there must be a header "Names") and paste them in a new spreadsheet. Save this spreadsheet as an excel XLS file.
+* Finally, you can open MATLAB. If you added the repository to your path, you should be able to type run the ```initializeRandomStudent()``` function to get started.
 
 ## Function Definitions
 All that is necessary to run the program is to call the following functions when necessary. Each student is assigned a "student number" which is really just the vector row number that corresponds to their statistics.
